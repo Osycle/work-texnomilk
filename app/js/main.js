@@ -99,8 +99,8 @@ $(function(){
 		cellAlign: 'center'
 	});
 
-	// Certification
-	var carouselCerf = $('.carousel-cerf .carousel-content').flickity({
+
+	var carouselEquipment = $('.carousel-equipment .carousel-content').flickity({
 		//setGallerySize: false,
 		autoPlay: 3000,
 		arrowShape: arrowStyle,
@@ -113,13 +113,12 @@ $(function(){
 		//friction: 0.2,
 		//rightToLeft: true,
 		pageDots: false,
-		//contain: true,
+		contain: false,
 		percentPosition: true,
-		cellAlign: 'center'
+		cellAlign: ''
 	});
 
-	// REVIEWS
-	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
+	var carouselEquipment = $('.carousel-projects .carousel-content').flickity({
 		//setGallerySize: false,
 		autoPlay: 3000,
 		arrowShape: arrowStyle,
@@ -131,11 +130,32 @@ $(function(){
 		//selectedAttraction: 0.2,
 		//friction: 0.2,
 		//rightToLeft: true,
-		pageDots: true,
-		//contain: true,
+		pageDots: false,
+		contain: false,
 		percentPosition: true,
-		cellAlign: 'center'
+		cellAlign: ''
 	});
+
+	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
+		//setGallerySize: false,
+		autoPlay: 3000,
+		arrowShape: arrowStyle,
+		imagesLoaded: true,
+		groupCells: 2,
+		prevNextButtons: true,
+		draggable: !checkView(991),
+		wrapAround: true,
+		//adaptiveHeight: true,
+		//selectedAttraction: 0.2,
+		//friction: 0.2,
+		//rightToLeft: true,
+		pageDots: false,
+		contain: false,
+		percentPosition: true,
+		cellAlign: ''
+	});
+
+
 
 
 
@@ -414,7 +434,7 @@ function scrolledDiv(el) {
 		   window.revSlider = $('.rev-slider').revolution({
 					delay:6000,
 					startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
-					startheight: $( window ).width() < 992 ? 500 : 600,
+					startheight: $( window ).width() < 992 ? 600 : 550,
 					autoHeight:"off",
 					fullScreenAlignForce:"off",
 
@@ -434,8 +454,8 @@ function scrolledDiv(el) {
 
 					keyboardNavigation:"off",
 
-					navigationType:"bullet",
-					navigationArrows:"none",	//small
+					navigationType:"none",
+					navigationArrows:"solo",	//small
 					navigationStyle:"round",
 
 					navigationHAlign:"center",
