@@ -30,26 +30,62 @@ $(function(){
 	  delay: 100
 	});
 
-	setTimeout(function(){AOS.refresh()}, 1);
+	setTimeout(function(){AOS.refresh()}, 1000);
 
-	// ELEVATEZOOM
-	if( checkView(991) )
-		$("[data-zoom-image]:not([group])").elevateZoom({
-			scrollZoom : true,
-			zoomWindowFadeIn: 500,
-			zoomWindowFadeOut: 500,
-			lensFadeIn: 300,
-			lensFadeOut: 300,
-			//cursor: 'pointer', 
-			tint:true, 
-			tintColour:'#000', 
-			tintOpacity:0.5,
-			//zoomType				: "lens",
-			//lensShape : "round",
-			//lensSize    : 200,
-			imageCrossfade: true, 
-			easing : true
-		});
+
+	// MMENU
+/*	$("#min-menu").mmenu({
+		"extensions": [
+			"fx-menu-zoom",
+			"fx-panels-zoom",
+			"pagedim-black",
+			"theme-dark"
+		],
+		"offCanvas": {
+			"position": "right"
+		},
+		"navbars": [
+			{
+			"position": "top"
+			}
+		]
+	});
+
+
+
+*/
+	
+			$("#min-menu").mmenu({
+				extensions 	: [ 
+											"position-bottom", 
+											"fullscreen", 
+											"theme-black", 
+											"listview-50", 
+											"fx-panels-slide-up", 
+											"fx-listitems-drop", 
+											"border-offset" 
+											],
+				navbar 			: 
+										{
+											title 		: "Меню"
+										},
+				navbars		: [{
+					height 	: 2,
+					content : [ 
+											'<div class="min-menu-logo">'+
+											'<a  href="" ><img src="img/logo.png"/></a>'+
+											'</div>'+
+											'<div class="close-btn">'+
+											'<a  href="#page" ><i class="fa fa-angle-right"></i></a>'+
+											'</div>'
+										]
+							}, 
+					{
+						content : ["prev","title"] 
+					}]
+				}, { });
+
+
 
 
 
@@ -67,8 +103,8 @@ $(function(){
 		autoPlay: 3000,
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
-		prevNextButtons: checkView(991),
-		draggable: !checkView(991),
+		prevNextButtons: checkSm(),
+		draggable: !checkSm(),
 		wrapAround: true,
 		//adaptiveHeight: true,
 		//selectedAttraction: 0.2,
@@ -77,26 +113,7 @@ $(function(){
 		pageDots: false,
 		contain: true,
 		percentPosition: true,
-		cellAlign: checkView(991) ? "left" : "center"
-	});
-
-	// RANGE
-	var carouselRange = $('.carousel-range .carousel-content').flickity({
-		//setGallerySize: false,
-		autoPlay: 3000,
-		arrowShape: arrowStyle,
-		imagesLoaded: true,
-		prevNextButtons: true,
-		draggable: !checkView(991),
-		wrapAround: true,
-		//adaptiveHeight: true,
-		//selectedAttraction: 0.2,
-		//friction: 0.2,
-		//rightToLeft: true,
-		pageDots: false,
-		//contain: true,
-		percentPosition: true,
-		cellAlign: 'center'
+		cellAlign: checkSm() ? "left" : "center"
 	});
 
 
@@ -106,7 +123,7 @@ $(function(){
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
 		prevNextButtons: true,
-		draggable: !checkView(991),
+		draggable: checkSm(),
 		wrapAround: true,
 		//adaptiveHeight: true,
 		//selectedAttraction: 0.2,
@@ -118,18 +135,14 @@ $(function(){
 		cellAlign: ''
 	});
 
-	var carouselEquipment = $('.carousel-projects .carousel-content').flickity({
+	var carouselProjects = $('.carousel-projects .carousel-content').flickity({
 		//setGallerySize: false,
-		autoPlay: 3000,
+		autoPlay: 3500,
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
 		prevNextButtons: true,
-		draggable: !checkView(991),
+		draggable: checkSm(),
 		wrapAround: true,
-		//adaptiveHeight: true,
-		//selectedAttraction: 0.2,
-		//friction: 0.2,
-		//rightToLeft: true,
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
@@ -138,25 +151,75 @@ $(function(){
 
 	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
 		//setGallerySize: false,
-		autoPlay: 3000,
+		autoPlay: 3300,
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
-		groupCells: 2,
+		groupCells: checkSm() ? 1 : 2,
 		prevNextButtons: true,
-		draggable: !checkView(991),
+		draggable: checkSm(),
 		wrapAround: true,
-		//adaptiveHeight: true,
-		//selectedAttraction: 0.2,
-		//friction: 0.2,
-		//rightToLeft: true,
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
 		cellAlign: ''
 	});
 
+	var carouselPartners = $('.carousel-partners .carousel-content').flickity({
+		autoPlay: 2800,
+		arrowShape: arrowStyle,
+		imagesLoaded: true,
+		prevNextButtons: true,
+		draggable: checkSm(),
+		wrapAround: true,
+		pageDots: false,
+		contain: false,
+		percentPosition: true,
+		cellAlign: ''
+	});
 
+	//VERTICAL CAROUSEL
+  $('.jcarousel')
+    .jcarousel({
+        //vertical: true
+    })
+		.on('jcarousel:targetin', 'li', function( event, carousel ) {
+		    $(this).addClass('active');
+		})
+		.on('jcarousel:targetout', 'li', function( event, carousel ) {
+				$(this).removeClass('active');
+		});
 
+	// CONTROLS
+  $('.jcarousel-control-prev')
+      .on('jcarouselcontrol:active', function() {
+          $(this).removeClass('inactive');
+      })
+      .on('jcarouselcontrol:inactive', function() {
+          $(this).addClass('inactive');
+      })
+      .jcarouselControl({
+          target: '-=1'
+      });
+
+  $('.jcarousel-control-next')
+      .on('jcarouselcontrol:active', function() {
+          $(this).removeClass('inactive');
+      })
+      .on('jcarouselcontrol:inactive', function() {
+          $(this).addClass('inactive');
+      })
+      .jcarouselControl({
+          target: '+=1'
+      });
+
+  $('.jcarousel-pagination')
+      .on('jcarouselpagination:active', 'a', function() {
+          $(this).addClass('active');
+      })
+      .on('jcarouselpagination:inactive', 'a', function() {
+          $(this).removeClass('active');
+      })
+      .jcarouselPagination();
 
 
 
@@ -346,7 +409,7 @@ $(function(){
 				var per = ( ( 100 / imagesTotalCount ) * imagesLoadedCount ) << 0 ;
 
 				setTimeout( function(){
-					console.log(per);
+					//console.log(per);
 					$(preloadPercent).text(  per +  "%"); 
 				}, 1)
 
@@ -394,8 +457,8 @@ var isWebkit = /Webkit/i.test(navigator.userAgent),
 
 // COMMON FUNCTION
 
-function checkView( width ){
-	return ($( document ).width() > width);
+function checkSm(){
+	return ($( document ).width() < 992);
 }
 
 function getRandomInt(min, max) {
@@ -474,7 +537,7 @@ function scrolledDiv(el) {
 					soloArrowRightVOffset:0,
 
 
-					touchenabled: $( window ).width() < 992 ? "on" : "off",
+					touchenabled: "off",
 					swipe_velocity:"0.7",
 					swipe_max_touches:"1",
 					swipe_min_touches:"1",
