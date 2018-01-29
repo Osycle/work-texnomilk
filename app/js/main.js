@@ -206,6 +206,12 @@ $(function(){
 		jcarouselWrapper.eq(i).find(".jcarousel")
 			.jcarousel({
 	      vertical: checkSm() ? true : true,
+	       animation: {
+		        duration: 600,
+		        easing:   'linear',
+		        complete: function() {
+		        }
+		    },
 	      center: false
 	    })
 			.on('jcarousel:targetin', 'li', function( event, carousel ) {
@@ -215,7 +221,10 @@ $(function(){
 					$(this).removeClass('active');
 			})
 
-			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '+=1');
+			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '-1');
+			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('fullyvisible');
+
+
 		// CONTROLS
 		var prevNext = jcarouselWrapper.eq(i).find(".jcarousel-prev-next");
 
@@ -245,6 +254,21 @@ $(function(){
 
 
 	}//:end for;
+
+
+	//BOOTSTRAP TAB
+	var prevTab = $('a[data-toggle="tab"]').closest('[role="active"].active');
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+	  $(e.target).closest('[role="active"]').addClass("active");
+	  $(prevTab).removeClass("active");
+	 	console.log( e.target, prevTab )
+	  prevTab = $(e.target).closest('[role="active"]');
+	})
+
+
+
+
+
 
 
 	if( $('.carousel-article').length >= 0 ){

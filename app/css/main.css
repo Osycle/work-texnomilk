@@ -18369,6 +18369,9 @@ dib {
     max-width: unset; }
   .logo font {
     font-size: 1.5em; }
+  @media (max-width: 1199px) {
+    .logo {
+      height: 210px; } }
 
 .header-search .btn-search {
   position: absolute;
@@ -18402,6 +18405,9 @@ dib {
   border-radius: 50%;
   margin: 10px 0;
   margin-left: auto; }
+
+.header-lang img {
+  vertical-align: top; }
 
 .menu {
   text-align: center; }
@@ -19243,6 +19249,16 @@ a[target="_blank"] {
 /*
 	--pages--
 */
+.stock-notification, #stock-notification {
+  background-color: #ecc747;
+  z-index: 10;
+  position: relative;
+  padding: 5px 0; }
+  .stock-notification *, #stock-notification * {
+    line-height: 150%; }
+  .stock-notification a:hover, #stock-notification a:hover {
+    text-decoration: underline; }
+
 .about-photo {
   margin-left: -2.75%;
   margin-right: -2.75%;
@@ -19312,6 +19328,9 @@ a[target="_blank"] {
   .info .jcarousel-wrapper.active {
     display: block; }
 
+.info .info-items li {
+  list-style: none; }
+
 .info .info-items [class*="info-item"] {
   padding: 40px;
   padding-top: 10px;
@@ -19320,8 +19339,14 @@ a[target="_blank"] {
   transition: all 0.3s ease-in-out; }
   .info .info-items [class*="info-item"] .img-content {
     width: 100%; }
-  .info .info-items [class*="info-item"].active, .info .info-items [class*="info-item"]:hover {
+  .info .info-items [class*="info-item"].active {
     background-color: #23bb54;
+    color: white; }
+    .info .info-items [class*="info-item"].active:hover {
+      background-color: #23bb54;
+      color: white; }
+  .info .info-items [class*="info-item"]:hover {
+    background-color: rgba(35, 187, 84, 0.8);
     color: white; }
 
 .info .info-items-carousels [class*="info-item-carousel"] {

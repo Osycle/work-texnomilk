@@ -25,6 +25,84 @@
 	
 	<noscript><p>Ваш браузер не поддерживает скрипты!<br/> Пожалуйста подключите в настройках браузера Javascript</p></noscript> 
 
+	<div class="row hidden-xs hidden-sm" id="stock-notification" data-aos="fade">
+		<div class="container">
+			<div class="col-xs-12">
+				<div class="desc-content col-md-9 align-center" >
+					<p>
+						<strong>Акция</strong> при заказе аппарата "Modimilk" мы предоставляем в подарок жилетку от нашей компании
+					</p>
+				</div>
+				<div class="col-md-3 align-right">
+					<a class="color-1" href="" title="Подробнее" target="_blank">Подробнее</a>
+					<span role="button" class="p-h-15" title="Закрыть" onclick="$('#stock-notification').slideToggle()"><i class="fa fa-close"></i></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+		<!-- BID -->
+	<div class="bid-modal modal fade animated" id="bidModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+				<div class="modal-body">
+
+					 <!-- success-info -->
+					<div class="col-md-12 align-center m-b-30">
+						<font color="red"><div id=""></div></font>
+						<font color="green"><div id=""></div></font>
+					</div>
+
+					<form  method="POST" action="">
+					
+						<h3>Связаться с нами</h3>
+
+						<!-- NAME -->
+						<span class="input input--chisato input-name">
+							<input class="input__field input__field--chisato" type="text" name="name" autocomplete="off">
+							<label class="input__label input__label--chisato" for="input-1">
+								<span class="input__label-content input__label-content--chisato" data-content="Имя, фамилия">Имя, фамилия</span>
+							</label>
+						</span>
+
+						<!-- EMAIL -->
+						<span class="input input--chisato input-email">
+							<input class="input__field input__field--chisato" type="text" name="email" autocomplete="off">
+							<label class="input__label input__label--chisato" for="input-2">
+								<span class="input__label-content input__label-content--chisato" data-content="Электронная почта">Электронная почта</span>
+							</label>
+						</span>
+
+						<!-- TEL -->
+						<span class="input input--chisato input-phone">
+							<input class="input__field input__field--chisato" type="text" name="phone" autocomplete="off">
+							<label class="input__label input__label--chisato" for="input-3">
+								<span class="input__label-content input__label-content--chisato" data-content="Номер телефона">Номер телефона</span>
+							</label>
+						</span>
+
+						<!-- TEXTAREA -->
+						<span class="textarea">
+							<label class=""><span class="">Сообщение</span></label>
+							<textarea name="message" type="text"></textarea>
+						</span>
+
+						<div class="form-footer">
+							<button type="submit" class="align-right btn-def submit"><b>Отправить</b></button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
 
 	<div class="bg-page bg-cow-header" data-aos="fade"></div>
 
@@ -40,7 +118,7 @@
 						<!-- LOGOTYPE -->
 						<div class="logo pie-xs-elastic-12">
 							<div class="img-content">
-								<a href="">
+								<a href="index.html">
 									<img src="img/logo.png">
 								</a>
 							</div>
@@ -71,7 +149,7 @@
 
 						<div class="col-xs-12 p-h-15 m-v-15">
 
-							<div class="pie-md-elastic-3 p-h-15">
+							<div class="pie-md-elastic-4 align-right p-h-15">
 								<i class="fa fa-phone vam hidden-xs hidden-sm"></i>
 								<div class="p-l-10 vam inline-block">
 									<p>+998 (95) 300-77-02</p>
@@ -79,7 +157,7 @@
 								</div>
 							</div>
 
-							<div class="header-search pie-md-elastic-8 p-h-15">
+							<div class="header-search pie-lg-elastic-6 pie-md-elastic-5 p-h-15">
 								<form method="POST" action="">
 				  					<div class="header-search-content">
 				  						<input class="tp-form-control color-black" name="query" value="" placeholder="Поиск">
@@ -106,58 +184,40 @@
 
 
 
-		<!-- MIN - MENU -->
-
-		  <!-- The menu -->
-			<div id="min-menu">
-				<ul>
-					<li><a href="about.html">О компании</a></li>
-					<li><a href="news.html">Новости</a></li>
-					<li><a href="production.html">Продукция</a>
-						<ul class="sub-menu-1">
-							<li><a href="production-article.html">Противогазы гражданские</a>
-							<li><a href="production-article.html">Шланговые дыхательные аппараты</a>
-							<li><a href="production-article.html">Комплектующие противогазов</a>
-							<li><a href="production-article.html">Полумаски со сменными фильтрами</a>
-							<li><a href="production-article.html">Противогазы промышленные</a>
-							<li><a href="production-article.html">Фильтры противогазовые и комбинированные</a>
-							<li><a href="production-article.html">Полумаски противоаэрозольные</a>
-							<li><a href="production-article.html">Самоспасатели</a>
-							<li><a href="production-article.html">Средства индивидуальной защиты головы и лица человека</a>
-							<li><a href="production-article.html">Средства индивидуальной защиты от падения с высоты</a>
-							<li><a href="production-article.html">Измерительные приборы</a>
-						</ul>
-					</li>
-					<li><a href="info.html">Информация</a>
-						<ul>
-							<li><a href="info-article.html">Нормативно-правовая база</a></li>
-							<li><a href="info-article.html">Статьи</a></li>
-							<li><a href="info-article.html">Противодействие контрафакту</a></li>
-							<li><a href="info-article.html">Определение даты изготовления лицевых частей</a></li>
-						</ul>
-					</li>
-					<li><a href="catalog.html">Каталог</a></li>
-					<li><a href="contacts.html">Контакты</a></li>
-				</ul>
-			</div>
-
-			<div class="min-menu-header hidden-md hidden-lg">
-				<div class="col-xs-6">
-					<div class="min-menu-logo">
-						<a  href="index.html" ><img src="img/logo-footer.png"/></a>
-					</div>
+		<!-- MIN MENU -->
+		<div id="min-menu">
+			<ul>
+				<li><a href="about.html">О нас</a>
+					<ul class='sub-menu-1'>
+						<li><a href="services.html">Наши услуги</a></li>
+						<li><a href="projects.html">Наши проекты</a></li>
+						<li><a href="partners.html">Наши партнеры</a></li>
+					</ul>
+				</li>
+				<li><a href="info.html">Полезные информации</a></li>
+				<li><a href="news.html">Новости</a></li>
+				<li><a href="cooperation.html">Сотрудничество</a></li>
+				<li><a href="production.html">Медиа-центр</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
+			</ul>
+		</div>
+		<!-- MIN MENU HEADER -->
+		<div class="min-menu-header hidden-md hidden-lg">
+			<div class="col-xs-6">
+				<div class="min-menu-logo">
+					<a  href="index.html" ><img src="img/logo-footer.png"/></a>
 				</div>
-				<div class="min-menu-bar col-xs-6">
-					<a href="#min-menu">
-					<div class="bar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</div>
-					</a>
-				</div>
-			
 			</div>
+			<div class="min-menu-bar col-xs-6">
+				<a href="#min-menu">
+				<div class="bar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</div>
+				</a>
+			</div>
+		</div>
 
 
 
@@ -171,64 +231,6 @@
 	</header>
 
 
-
-	<!-- BID -->
-<div class="bid-modal modal fade animated" id="bidModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
-
-			<div class="modal-body">
-
-				 <!-- success-info -->
-				<div class="col-md-12 align-center m-b-30">
-					<font color="red"><div id=""></div></font>
-					<font color="green"><div id=""></div></font>
-				</div>
-
-				<form  method="POST" action="">
-				
-					<h3>Связаться с нами</h3>
-
-					<!-- NAME -->
-					<span class="input input--chisato input-name">
-						<input class="input__field input__field--chisato" type="text" name="name" autocomplete="off">
-						<label class="input__label input__label--chisato" for="input-1">
-							<span class="input__label-content input__label-content--chisato" data-content="Имя, фамилия">Имя, фамилия</span>
-						</label>
-					</span>
-
-					<!-- EMAIL -->
-					<span class="input input--chisato input-email">
-						<input class="input__field input__field--chisato" type="text" name="email" autocomplete="off">
-						<label class="input__label input__label--chisato" for="input-2">
-							<span class="input__label-content input__label-content--chisato" data-content="Электронная почта">Электронная почта</span>
-						</label>
-					</span>
-
-					<!-- TEL -->
-					<span class="input input--chisato input-phone">
-						<input class="input__field input__field--chisato" type="text" name="phone" autocomplete="off">
-						<label class="input__label input__label--chisato" for="input-3">
-							<span class="input__label-content input__label-content--chisato" data-content="Номер телефона">Номер телефона</span>
-						</label>
-					</span>
-
-					<!-- TEXTAREA -->
-					<span class="textarea">
-						<label class=""><span class="">Сообщение</span></label>
-						<textarea name="message" type="text"></textarea>
-					</span>
-
-					<div class="form-footer">
-						<button type="submit" class="align-right btn-def submit"><b>Отправить</b></button>
-					</div>
-
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
 
 
 
@@ -317,7 +319,7 @@
 										снижает количество бактерий.
 									</p>
 									<span class="btn-opacity m-v-30" style="width: 300px;">
-										<a href="" class="p-v-20">Оставить заявку</a>
+										<a class="p-v-20" data-toggle="modal" data-target="#bidModal" role="button">Оставить заявку</a>
 									</span>
 								</div>
 
@@ -365,7 +367,7 @@
 										возможно более продолжительное время.
 									</p>
 									<span class="btn-opacity m-v-30" style="width: 300px;">
-										<a href="" class="p-v-20">Оставить заявку</a>
+										<a class="p-v-20" data-toggle="modal" data-target="#bidModal" role="button">Оставить заявку</a>
 									</span>
 								</div>
 
@@ -432,9 +434,6 @@
 
 
 
-
-
-
 		<div class="main-content list-style-1 align-center-sm">
 
 
@@ -442,20 +441,17 @@
 
 
 			<div class="row m-v-60 short-about">
-				<div class="container ">
-					<div class="text-content color-gray  p-v-15 p-h-15 col-xs-12">
-						<h1>О нас</h1>
+				<div class="container p-v-15 p-h-15">
+
+					<h1>О нас</h1>
+					<div class="text-content color-gray col-xs-12">
 						<p class="text-indent">
           		Общество с ограниченной ответственностью <font class="color-1">Techno Milk></font> специализируется на деятельности в отрасли молочного животноводства в Республики Узбекистан. В сфере наших интересов лежит все, что связано с коровой, с производством и переработкой молока.
 							Клиентами компании являются как небольшие фермерские хозяйства с числом коров от 10 животных и выше, так и крупные хозяйства, имеющие стадо до 300, 500 коров и более дойных коров. Компания Techno Milk является ведущим поставщиком доильного и холодильного оборудования, техники для производства и раздачи кормов, стойлового оборудования, систем вентиляции и навозоудаления в коровниках, поилок, ветеринарных инструментов, станков для обработки копыт, мини перерабатывающих молочных заводов и другого оборудования и средств гигиены, облегчающих труд животновода, повышающих производство и качество молока.
 							Тесное сотрудничество с немецкой компанией “Agralis GmbH” на правах ее дилера позволяет ООО "Techno Milk" поставлять оборудование для производства молока от лучших мировых производителей... 
 						</p>
 					</div>
-					<div class="col-xs-12 align-center m-v-15">
-						<span class="btn-def m-auto" style="width: 150px;">
-							<a href="about.html" class="p-v-5 p-h-15">Подробнее</a>
-						</span>
-					</div>
+
 				</div>
 			</div>
 
