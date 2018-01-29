@@ -6,11 +6,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="">
 		
-	  	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
 		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
 
-   		<link rel="stylesheet" href="css/main.css">
-    	<title>Title</title>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="rs-plugin/css/settings.css" />
+		<title>Title</title>
 
 	    <!--[if lt IE 9]>
 	      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -21,93 +22,213 @@
 <body>
 
 	<div id="page">
-
+	
 	<noscript><p>Ваш браузер не поддерживает скрипты!<br/> Пожалуйста подключите в настройках браузера Javascript</p></noscript> 
 
 
+	<div class="bg-page bg-cow-header" data-aos="fade"></div>
 
 	<!-- HEADER -->
 	<div class="header-hidden"></div>
-	<header id="header" class="header-scroll">
+	<header id="header" class="header-scroll" data-aos="fade">
 		<!-- HEADER TOP -->
-		<div class="skin-header-top bg-color-white hidden-sm hidden-xs">
+		<div class="skin-header-top hidden-sm hidden-xs">
 			<div class="container">
-				<div class="header-top-content">
-					<!-- LOGOTYPE -->
-					<div class="logo pie-xs-elastic-2">
-						<div class="img-content pie-xs-2">
-							<a href="">
-								<img src="img/logo.png">
-							</a>
-						</div>
-						<div class="desc-content pie-xs-10 p-h-5">
-							<font class="font-family-2 color-1 text-uppercase">BIO-SUT</font>
-							<p class="text-lowercase">Очень вкусно и полезно!</p>
+				<div class="header-top-content color-white">
+
+					<div class="col-md-4">
+						<!-- LOGOTYPE -->
+						<div class="logo pie-xs-elastic-12">
+							<div class="img-content">
+								<a href="">
+									<img src="img/logo.png">
+								</a>
+							</div>
 						</div>
 					</div>
 
-					<!-- MENU -->
-					<div class="pie-xs-elastic-6 menu p-h-5">
-						<nav>
-							<ul class="menu-list">
-								<li><a href="index.html">Главная</a></li>
-								<li><a href="about.html">О компаний</a>
-									<ul class="sub-menu-1">
-										<li><a href="vacancies.html">Вакансии</a></li>
-									</ul>
-								</li>
-								<li><a href="cooperation.html">Сотрудничество</a></li>
-								<li><a href="production.html">Продукция</a></li>
-								<li><a href="contacts.html">Контакты</a></li>
-							</ul>
-						</nav>
+					<div class="col-md-8">
+
+						<!-- MENU -->
+						<div class="col-xs-12 menu p-h-15 m-v-15 align-right">
+							<nav>
+								<ul class="menu-list">
+									<li><a href="about.html">О нас</a>
+										<ul class='sub-menu-1'>
+											<li><a href="services.html">Наши услуги</a></li>
+											<li><a href="projects.html">Наши проекты</a></li>
+											<li><a href="partners.html">Наши партнеры</a></li>
+										</ul>
+									</li>
+									<li><a href="info.html">Полезные информации</a></li>
+									<li><a href="news.html">Новости</a></li>
+									<li><a href="cooperation.html">Сотрудничество</a></li>
+									<li><a href="production.html">Медиа-центр</a></li>
+									<li><a href="contacts.html">Контакты</a></li>
+								</ul>
+							</nav>
+						</div>
+
+						<div class="col-xs-12 p-h-15 m-v-15">
+
+							<div class="pie-md-elastic-3 p-h-15">
+								<i class="fa fa-phone vam hidden-xs hidden-sm"></i>
+								<div class="p-l-10 vam inline-block">
+									<p>+998 (95) 300-77-02</p>
+									<p>+998 (95) 300-77-04</p>
+								</div>
+							</div>
+
+							<div class="header-search pie-md-elastic-8 p-h-15">
+								<form method="POST" action="">
+				  					<div class="header-search-content">
+				  						<input class="tp-form-control color-black" name="query" value="" placeholder="Поиск">
+				  						<button type="submit" class="btn-res btn-search"><i class="fa fa-search"></i></button>
+				        		</div>
+			    			</form>
+							</div>
+
+
+							<div class="header-lang pie-md-elastic-1 align-right p-h-15">
+								<ul>
+									<li><a href=""><img src="img/icons/uz.png"/></a></li>
+									<li><a href=""><img src="img/icons/ru.png"/></a></li>
+								</ul>
+							</div>
+						</div>
+
+
 					</div>
 					
-
-					<div class="pie-xs-elastic-3 align-right">
-						<p class="color-1"><i class="fa fa-phone vam"></i><span class="vam"><big><strong>+99871 286-03-00</strong></big></span></p>
-						<p><small>Узбекистан, Таш. обл,  Кибрайский район посёлок Арген, ул М.Шералиева дом  1</small></p>
-					</div>
-
 				</div>
 			</div><!-- ./CONTAINER -->
 		</div><!-- ./HEADER TOP -->
 
 
 
-			<!-- MIN - MENU -->
+		<!-- MIN - MENU -->
 
-  		<div class="min-menu-header hidden-md hidden-lg">
-  				<div class="bg-black clearfix"></div>
-					<div class="min-menu-logo">
-						<a  href="index.html" ><img src="img/logo.png"/></a>
-					</div>
-	  			<input id="hamburger" class="hamburger" type="checkbox"/>
-					<label class="hamburger" for="hamburger">
-						<i></i>
-					</label>
-					<section class="drawer-list">
-						<div class="min-menu-skin">
-							<ul class="menu-list">
-								<li><a href="index.html">Главная</a></li>
-								<li><a href="about.html">О компаний</a>
-									<ul class="sub-menu-1">
-										<li><a href="vacancies.html">Вакансии</a></li>
-									</ul>
-								</li>
-								<li><a href="cooperation.html">Сотрудничество</a></li>
-								<li><a href="production.html">Продукция</a></li>
-								<li><a href="contacts.html">Контакты</a></li>
-							</ul>
-						</div>
-					</section>
+		  <!-- The menu -->
+			<div id="min-menu">
+				<ul>
+					<li><a href="about.html">О компании</a></li>
+					<li><a href="news.html">Новости</a></li>
+					<li><a href="production.html">Продукция</a>
+						<ul class="sub-menu-1">
+							<li><a href="production-article.html">Противогазы гражданские</a>
+							<li><a href="production-article.html">Шланговые дыхательные аппараты</a>
+							<li><a href="production-article.html">Комплектующие противогазов</a>
+							<li><a href="production-article.html">Полумаски со сменными фильтрами</a>
+							<li><a href="production-article.html">Противогазы промышленные</a>
+							<li><a href="production-article.html">Фильтры противогазовые и комбинированные</a>
+							<li><a href="production-article.html">Полумаски противоаэрозольные</a>
+							<li><a href="production-article.html">Самоспасатели</a>
+							<li><a href="production-article.html">Средства индивидуальной защиты головы и лица человека</a>
+							<li><a href="production-article.html">Средства индивидуальной защиты от падения с высоты</a>
+							<li><a href="production-article.html">Измерительные приборы</a>
+						</ul>
+					</li>
+					<li><a href="info.html">Информация</a>
+						<ul>
+							<li><a href="info-article.html">Нормативно-правовая база</a></li>
+							<li><a href="info-article.html">Статьи</a></li>
+							<li><a href="info-article.html">Противодействие контрафакту</a></li>
+							<li><a href="info-article.html">Определение даты изготовления лицевых частей</a></li>
+						</ul>
+					</li>
+					<li><a href="catalog.html">Каталог</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+				</ul>
 			</div>
+
+			<div class="min-menu-header hidden-md hidden-lg">
+				<div class="col-xs-6">
+					<div class="min-menu-logo">
+						<a  href="index.html" ><img src="img/logo-footer.png"/></a>
+					</div>
+				</div>
+				<div class="min-menu-bar col-xs-6">
+					<a href="#min-menu">
+					<div class="bar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</div>
+					</a>
+				</div>
+			
+			</div>
+
+
+
+
+
+
+
+
 
 
 	</header>
 
 
 
+	<!-- BID -->
+<div class="bid-modal modal fade animated" id="bidModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+			<div class="modal-body">
+
+				 <!-- success-info -->
+				<div class="col-md-12 align-center m-b-30">
+					<font color="red"><div id=""></div></font>
+					<font color="green"><div id=""></div></font>
+				</div>
+
+				<form  method="POST" action="">
+				
+					<h3>Связаться с нами</h3>
+
+					<!-- NAME -->
+					<span class="input input--chisato input-name">
+						<input class="input__field input__field--chisato" type="text" name="name" autocomplete="off">
+						<label class="input__label input__label--chisato" for="input-1">
+							<span class="input__label-content input__label-content--chisato" data-content="Имя, фамилия">Имя, фамилия</span>
+						</label>
+					</span>
+
+					<!-- EMAIL -->
+					<span class="input input--chisato input-email">
+						<input class="input__field input__field--chisato" type="text" name="email" autocomplete="off">
+						<label class="input__label input__label--chisato" for="input-2">
+							<span class="input__label-content input__label-content--chisato" data-content="Электронная почта">Электронная почта</span>
+						</label>
+					</span>
+
+					<!-- TEL -->
+					<span class="input input--chisato input-phone">
+						<input class="input__field input__field--chisato" type="text" name="phone" autocomplete="off">
+						<label class="input__label input__label--chisato" for="input-3">
+							<span class="input__label-content input__label-content--chisato" data-content="Номер телефона">Номер телефона</span>
+						</label>
+					</span>
+
+					<!-- TEXTAREA -->
+					<span class="textarea">
+						<label class=""><span class="">Сообщение</span></label>
+						<textarea name="message" type="text"></textarea>
+					</span>
+
+					<div class="form-footer">
+						<button type="submit" class="align-right btn-def submit"><b>Отправить</b></button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
 
 
 
@@ -116,78 +237,261 @@
 
 
 
+	<main class="container-fluid" data-aos="fade">
 
 
+		<!-- REV SLIDER -->
+		<div class="index-slider row">
+			<div class="container">
+				<div class="rev-slider">
 
+					<ul>
 
+						<li data-transition="fade" data-masterspeed="2000">
+							<div class="container">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<main class="container-fluid">
-
-
-
-	
-		<div class="main-content list-style-1 inside align-center-sm">
-
-
-
-				<div class="row contacts">
-
-					<div class="container">
-						<div class="contacts-content clearfix m-v-120 color-black">
-
-							<div class="text-content text-uppercase row">
-
-								<div class="col-md-4 p-h-15">
-									<h4>Телефоны:</h4>
-									<p>+7 (4922) 47-41-56 (для заказов)</p>
-									<p>+7 (4922) 44-10-68 (производство)</p>
+								<div class="tp-caption slide-header small_thin_grey customin customout start" 
+											data-x="left" 
+											data-y="120" 
+											data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;" 
+											data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+											data-speed="1300"
+											data-hoffset="100" 
+											data-start="900" 
+											data-easing="Power4.easeOut" 
+											data-endspeed="500" 
+											data-endeasing="Power4.easeIn" 
+											data-captionhidden="on">
+									<h1 class="color-white" data-flicker="Современное оборудование для производства молока">Современное оборудование для производства молока</h1>									
+									<p class="color-black">
+										Компания Techno Milk  представляют нашим предпринимателям, 
+										современные молокоперерабатывающие оборудования и установки  
+										от  передовых стран Европы.
+									</p>
+									<span class="btn-opacity m-v-30" style="width: 300px;">
+										<a class="p-v-20" data-toggle="modal" data-target="#bidModal" role="button">Оставить заявку</a>
+									</span>
 								</div>
-								<div class="col-md-3 p-h-15">
-									<h4>Режим работы:</h4>
-									<p>ПН-ПТ с 900 до 1800</p>
-								</div>
-								<div class="col-md-2 p-h-15">
-									<h4>E-mail:</h4>
-									<p>info@briz-kama.ru</p>
-								</div>
 
-								<div class="col-md-3 p-h-15">
-									<h4>Адрес:</h4>
-									<p>600001, г. Владимир, Быковский проезд, д. 3.</p>
+								<div class="tp-caption slide-header img customin customout start" 
+										data-x="right" 
+										data-y="bottom" 
+										data-hoffset="0" 
+										data-voffset="0" 
+										data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+										data-speed="1200" 
+										data-start="700" 
+										data-easing="Power4.easeOut" 
+										data-endspeed="500" 
+										data-endeasing="Power4.easeIn">
+									<img src="img/slider/slide-1.png">
 								</div>
 
 							</div>
+						</li>
+						
 
+
+						<li data-transition="fade" data-masterspeed="2000">
+							<div class="container">
+
+								<div class="tp-caption slide-header small_thin_grey customin customout start" 
+											data-x="left" 
+											data-y="120" 
+											data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;" 
+											data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+											data-speed="1300"
+											data-hoffset="100" 
+											data-start="900" 
+											data-easing="Power4.easeOut" 
+											data-endspeed="500" 
+											data-endeasing="Power4.easeIn" 
+											data-captionhidden="on">
+									<h1 class="color-white" data-flicker="Кислотное моющее средство Clesol">Кислотное моющее средство Clesol</h1>									
+									<p class="color-black">
+										Предназначено для кислотной очистки различных видов 
+										технологического оборудования и тары на предприятиях 
+										молочной промышленности и предприятиях по производству напитков. 
+										Эффективно растворяет молочный камень и известковые отложения, 
+										снижает количество бактерий.
+									</p>
+									<span class="btn-opacity m-v-30" style="width: 300px;">
+										<a href="" class="p-v-20">Оставить заявку</a>
+									</span>
+								</div>
+
+								<div class="tp-caption slide-header img customin customout start" 
+										data-x="right" 
+										data-y="bottom" 
+										data-hoffset="0" 
+										data-voffset="0" 
+										data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+										data-speed="1200" 
+										data-start="700" 
+										data-easing="Power4.easeOut" 
+										data-endspeed="500" 
+										data-endeasing="Power4.easeIn">
+									<img src="img/slider/slide-2.png">
+								</div>
+								
+
+							</div>
+						</li>
+
+
+
+						<li data-transition="fade" data-masterspeed="2000">
+							<div class="container">
+
+								<div class="tp-caption slide-header small_thin_grey customin customout start" 
+											data-x="left" 
+											data-y="120" 
+											data-customin="x:0;y:100;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:1;scaleY:3;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:0% 0%;" 
+											data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+											data-speed="1300"
+											data-hoffset="100" 
+											data-start="900" 
+											data-easing="Power4.easeOut" 
+											data-endspeed="500" 
+											data-endeasing="Power4.easeIn" 
+											data-captionhidden="on">
+									<h1 class="color-white" data-flicker="Доение и охлаждение в Узбекистане">Доение и охлаждение в Узбекистане</h1>									
+									<p class="color-black">
+										Основная цель охлаждения молока — это путем снижения температуры 
+										создать условия, тормозящие развитие в молоке микроорганизмов, 
+										и тем самым сохранить нормальные свойства и качество молока на 
+										возможно более продолжительное время.
+									</p>
+									<span class="btn-opacity m-v-30" style="width: 300px;">
+										<a href="" class="p-v-20">Оставить заявку</a>
+									</span>
+								</div>
+
+								<div class="tp-caption slide-header img customin customout start" 
+										data-x="right" 
+										data-y="bottom" 
+										data-hoffset="0" 
+										data-voffset="0" 
+										data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;" 
+										data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;" 
+										data-speed="1200" 
+										data-start="700" 
+										data-easing="Power4.easeOut" 
+										data-endspeed="500" 
+										data-endeasing="Power4.easeIn">
+									<img src="img/slider/slide-3.png">
+								</div>
+
+
+							</div>
+						</li>
+
+
+
+					</ul>
+
+				</div>
+			</div>
+		</div> <!-- ./END SLIDER -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<div class="main-content list-style-1 align-center-sm">
+
+
+
+
+
+			<div class="row m-v-60 contacts">
+				<div class="container ">
+					<div class="clearfix p-v-15 p-h-15  col-xs-12">
+						<h1 class="align-center">Контакты</h1>
+
+						<div class="contacts-faces figure-m-v-30  figure-center color-black">
+
+							<figure>
+								<div class="img-content col-md-5">
+									<img src="img/other/contacts-1.jpg">
+								</div>
+								<div class="desc-content col-md-7">
+									<p class="uppercase"><big><strong>Шерзод сайдуллаев</strong></big></p>
+									<span>Менеджер</span>
+									<br><br><br>
+									<p>Телефон: +998 91 230 33 33</p>
+									<p>E-mail: im@techno.com</p>
+								</div>
+							</figure>
+
+							<figure>
+								<div class="img-content col-md-5">
+									<img src="img/other/contacts-2.jpg">
+								</div>
+								<div class="desc-content col-md-7">
+									<p class="uppercase"><big><strong>Шерзод сайдуллаев</strong></big></p>
+									<span>Менеджер</span>
+									<br><br><br>
+									<p>Телефон: +998 91 230 33 33</p>
+									<p>E-mail: im@techno.com</p>
+								</div>
+							</figure>
+							
+
+							<figure>
+								<div class="img-content col-md-5">
+									<img src="img/other/contacts-3.jpg">
+								</div>
+								<div class="desc-content col-md-7">
+									<p class="uppercase"><big><strong>Наш офис</strong></big></p>
+									<br><br>
+									<p>Телефон: +998 91 230 33 33</p>
+									<p>E-mail: im@techno.com</p>
+									<p>Факс: +998 91 230 33 33</p>
+								</div>
+							</figure>
 
 						</div>
 					</div>
 
 				</div>
-
-				<div class="row">
-					<div class="container align-center text-uppercase">
-						<h4>Карта проезда:</h4>
-					</div>
-					<div id="map-canvas"class="m-t-60"></div>
-				</div>
-
 			</div>
 
 
@@ -196,6 +500,13 @@
 
 
 
+
+			<div class="row">
+				<div class="container align-center">
+					<h1>Как добраться</h1>
+				</div>
+				<div id="map-canvas"class="m-t-60"></div>
+			</div>
 
 
 
@@ -211,6 +522,7 @@
 
 
 		</div><!-- ./MAIN-CONTENT -->
+
 
 
 
@@ -238,86 +550,114 @@
 
 	<!-- FOOTER -->
 	<footer id="footer" class="container-fluid align-center-sm bg-color-1">
+		<div class="bg-cow-texture"></div>
 		<div class="container">
-			<div class="footer-content p-v-30 clearfix color-white">
+			<div class="footer-content p-v-30 clearfix color-white row">
 
 
 
-				<div class="col-md-8 clearfix">
+				<div class="footer-logo col-md-2 p-h-15 m-v-30 ">
+					<img src="img/logo-footer.png">
+				</div>
 
-					<div class="footer-menu hidden-xs hidden-sm m-v-15 col-xs-12 li-inline-block font-w-600 text-uppercase">
-						<nav>
+
+				<div class="footer-menu hidden-xs hidden-sm col-md-8 p-h-15 m-v-30 ">
+					<div class="row">
+
+						<div class="col-md-3 p-h-15">
 							<ul>
-								<li><a href="index.html">Главная</a></li>
-								<li><a href="about.html">О компаний</a></li>
-								<li><a href="cooperation.html">Сотрудничество</a></li>
-								<li><a href="production.html">Продукция</a></li>
-								<li><a href="contacts.html">Контакты</a></li>
+								<li><h4><a href="">О нас</a></h4>
+									<ul class="sub-menu-1">
+										<li><a href="">О компании</a></li>
+										<li><a href="">Наши партнеры</a></li>
+										<li><a href="">Наши проекты</a></li>
+										<li><a href="">Публикации ТМ</a></li>
+										<li><a href="">Видео материалы</a></li>
+										<li><a href="">Полезные информации</a></li>
+									</ul>
+								</li>
 							</ul>
-						</nav>
-					</div>
-
-					<div class="footer-contacts col-xs-12">
-
-						<div class="col-md-3 m-v-30">
-							<i class="fa fa-phone vam hidden-xs hidden-sm"></i>
-							<div class="footer-phone p-l-10 vam inline-block box-80">
-								<p>+99871 286-03-00</p>
-								<p>+99871 286-02-42</p>
-							</div>
 						</div>
 
-						<div class="col-md-6 m-v-30">
-							<i class="fa fa-map-marker vam hidden-xs hidden-sm"></i>
-							<div class="footer-address p-l-10 vam inline-block box-90">
-								<p>Узбекистан, Таш/обл,  Кибрайский район посёлок Арген, ул М.Шералиева дом  1</p>
-							</div>
+						<div class="col-md-3 p-h-15">
+							<ul>
+								<li><h4><a href="">Оборудовние</a></h4>
+									<ul class="sub-menu-1">
+										<li><a href="">О компании</a></li>
+										<li><a href="">Наши партнеры</a></li>
+										<li><a href="">Наши проекты</a></li>
+										<li><a href="">Публикации ТМ</a></li>
+										<li><a href="">Видео материалы</a></li>
+										<li><a href="">Полезные информации</a></li>
+									</ul>
+								</li>
+							</ul>
 						</div>
 
-						<div class="col-md-3 m-v-30">
-							<i class="fa fa-envelope vam hidden-xs hidden-sm"></i>
-							<div class="footer-address p-v-10 p-l-10 vam inline-block box-80">
-								<p>bio-sut@gmail.com</p>
-							</div>
+						<div class="col-md-3 p-h-15">
+							<ul>
+								<li><h4><a href="">Оснащение коровника</a></h4>
+									<ul class="sub-menu-1">
+										<li><a href="">О компании</a></li>
+										<li><a href="">Наши партнеры</a></li>
+										<li><a href="">Наши проекты</a></li>
+										<li><a href="">Публикации ТМ</a></li>
+										<li><a href="">Видео материалы</a></li>
+										<li><a href="">Полезные информации</a></li>
+									</ul>
+								</li>
+							</ul>
 						</div>
 
+						<div class="col-md-3 p-h-15">
+							<ul>
+								<li><h4><a href="">Наши услуги</a></h4>
+									<ul class="sub-menu-1">
+										<li><a href="">О компании</a></li>
+										<li><a href="">Наши партнеры</a></li>
+										<li><a href="">Наши проекты</a></li>
+										<li><a href="">Публикации ТМ</a></li>
+										<li><a href="">Видео материалы</a></li>
+										<li><a href="">Полезные информации</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
 
 					</div>
 				</div>
 
+				<div class="footer-soc col-md-2 p-h-15 m-v-30 ">
 
-				<div class="col-md-3 col-md-offset-1 p-h-15 clearfix">
-
-					<div class="footer-subscribe m-v-15 col-xs-offset-3 col-sm-offset-0 col-xs-6 col-sm-12">
-						<form method="POST" action="" class="clearfix">
-							<input class="tp-form-control" name="subscribe" value="" placeholder="E-mail">
-							<button type="submit" class="text-uppercase btn-res btn-subscribe">
-								Подписаться
-							</button>
-						</form>
-					</div>
-
-					<div class="col-xs-12">
-
-						<div class="footer-soc m-t-20 aling-right-md">
-							<ul>
-								<li><a href=""><i class="fa fa-3x fa-facebook-official"></i></a></li>
+							<h4>Соцсети</h4>
+							<ul class="li-inline-block">
+								<li><a href=""><i class="fa fa-facebook"></i></a></li>
+								<li><a href=""><i class="fa fa-vk"></i></a></li>
+								<li><a href=""><i class="fa fa-instagram"></i></a></li>
+								<li><a href=""><i class="fa fa-twitter"></i></a></li>
 							</ul>
-						</div>
 
-						<div class="copyright m-v-5 col-xs-12">
-					    <p>© <time id="copydate"></time>. Bio-sut Все права защищены</p>
+							<ul class="hidden-xs hidden-sm pageviews m-v-15">
+								<li><a href=""><img src="img/other/pageviews-1.jpg"></a></li>
+								<li><a href=""><img src="img/other/pageviews-2.jpg"></a></li>
+								<li><a href=""><img src="img/other/pageviews-3.jpg"></a></li>
+							</ul>
+	
+				</div>
+
+				<div class="col-md-12 p-h-15 ">
+					<div class="row">
+						<div class="copyright col-md-offset-2 col-md-4 m-v-15 p-h-15">
+					    <p>Copyright © <time id="copydate"></time>. Все права защищены</p>
 					    <script>copydate.innerText = new Date().getFullYear()</script>
 						</div>
-						<div class="dev p-v-10 col-xs-12 hidden-xs hidden-md">
-					      <a href="https://www.life-style.uz" class="link" title="Создание и продвижение сайтов в Ташкенте">
+						<div class="dev col-md-4 m-v-15 p-h-15">
+					      <a href="https://lifestyle.uz" class="link" title="Создание и продвижение сайтов">
 					      	Создание сайтов
-					      	<em><font color="#80bbff">Life </font></em><font color="ghostwhite">Style</font>
+					      	<em><font class="color-1">Life </font></em><font color="ghostwhite">Style</font>
 					      </a> 
 						</div>
-
 					</div>
-
 				</div>
 
 			</div>
@@ -338,8 +678,13 @@
 
 		<!-- SCRIPTS -->
 		<script src="js/scripts.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jcarousel.js"></script>
 		<script src="js/main.js"></script>
 		
+		<!-- jQuery REVOLUTION Slider  -->
+		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+
 
 
 			<style>
@@ -347,7 +692,7 @@
 				
 				#map-canvas {
 					width: 100%;
-					height: 470px};
+					height: 540px};
 				}
 				
 				
@@ -459,7 +804,6 @@
 					bicyclingLayer.setMap(map);
 					
 					var infoContent = '<div class="window-content align-center">'+
-															'<div class="logo-map m-v-15"><img src="img/logo.png"/></div>'+
 															'<p>м. Львов, вул. Мирзо Улугбек, 317</p>'+
 														'</div>';
 					
@@ -470,7 +814,7 @@
 					var icon = {
 						path: 'M16.5,51s-16.5-25.119-16.5-34.327c0-9.2082,7.3873-16.673,16.5-16.673,9.113,0,16.5,7.4648,16.5,16.673,0,9.208-16.5,34.327-16.5,34.327zm0-27.462c3.7523,0,6.7941-3.0737,6.7941-6.8654,0-3.7916-3.0418-6.8654-6.7941-6.8654s-6.7941,3.0737-6.7941,6.8654c0,3.7916,3.0418,6.8654,6.7941,6.8654z',
 						anchor: new google.maps.Point(16.5, 51),
-						fillColor: '#3c5caf',
+						fillColor: '#23bb54',
 						fillOpacity: 0.6,
 						strokeWeight: 0,
 						scale: 1
@@ -500,8 +844,6 @@
 				window.onresize = checkResize;	
 						
 			</script>  
-
-
 
 
 

@@ -46,12 +46,11 @@ $color-gray_3: #212121;
 
 	figure{
 		//float: left;
-		width: ($width/$item)+%;
 		margin-left: ( (100 - $width)/($item*2) )+%;
 		margin-right: ( (100 - $width)/($item*2) )+%;
-
 		@if $style ==	block{
 			float: left;
+			width: ($width/$item)+%;
 		} 
 		@else if $style == table {
 
@@ -125,6 +124,7 @@ $color-gray_3: #212121;
 		margin: 15px 0;
 	}
 }
+
 .table-content{
 
 	overflow-x: auto;
@@ -150,7 +150,16 @@ $color-gray_3: #212121;
 
 	}
 }
+.figure-center{
+	@media (min-width: 992px){
+		text-align: center;
+		*{
+			text-align: initial;
+			text-align: left;
+		}
+	}
 
+}
 .letter-none{
 	letter-spacing: -6px;
 	*{
@@ -648,8 +657,10 @@ dib{
 	}
 
 }
-
-
+.text-indent{
+	    text-indent: 60px;
+}
+   
 
 //--bg--
 
@@ -1523,7 +1534,6 @@ a[target="_blank"]{
 			width: 220px;
 		}
 
-
 	}
 
 	@media (min-width: 992px) {
@@ -1531,7 +1541,7 @@ a[target="_blank"]{
 			width: 90%;
 		}
 		.slide-header{
-			width: 50%;
+			width: 49%;
 		}
 		&.img{
 			width: 50%;
@@ -1959,22 +1969,71 @@ a[target="_blank"]{
 
 
 
+/*
+	--pages--
+*/
+
+//about
+.about-photo{
+	@include align-cells(90, 2);
+	@media (max-width:991px){
+		@include align-cells(90, 1);
+	}
+}
+
+
+
+//contacts
+.contacts-faces{
+	@include align-cells(90, 2, table);
+	@media (max-width:991px){
+		@include align-cells(90, 1, table);
+	}
+}
 
 
 
 
 
 
+.info{
+	.jcarousel-wrapper{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}	
+	.info-items{
 
+		[class*="info-item"]{
+			padding: 40px;
+			padding-top: 10px;
+			transition: all 0.3s ease-in-out;
+			.img-content{
+				width: 100%;
+			}
+			&.active, &:hover{
+				background-color: $color-1;
+				color: white;
+			}
+		}
 
+	}
 
-
-
-
-
-
-
-
+	.info-items-carousels{
+		[class*="info-item-carousel"]{
+			padding: 15px 20px;
+			.img-content{
+				width: 100%;
+			}
+		}
+	}
+	@media (max-width:991px){
+		.jcarousel{
+			height: 700px;
+		}
+	}
+}
 
 
 
@@ -2339,6 +2398,49 @@ a[target="_blank"]{
 			//filter: brightness(0%) invert(0%);
 		}
 	}
+	@media (max-width:992px){
+		.carousel-cell{
+			width: (100)+%;
+		}
+	}
+	.flickity-prev-next-button{
+		background-color: transparent;
+		&:hover, &:focus{
+			background-color: transparent;
+			.arrow{
+				fill: $color-1;
+			}
+		}
+	}
+	.flickity-prev-next-button.previous{ left: -10px; }
+	.flickity-prev-next-button.next{ right: -10px; }
+}
+
+
+
+//carousel-certification
+.carousel-certification{
+	.carousel-content{
+		
+	}
+	.carousel-cell{
+		width: (80/4)+%;
+		margin-left: 0;
+		padding-left: 2%;
+		padding-right: 2%;
+		margin-right: 5.4%;
+		img{
+			transition: filter 0.2s ease-in-out;
+		}
+		img:hover{
+			//filter: brightness(0%) invert(0%);
+		}
+	}
+	@media (max-width:992px){
+		.carousel-cell{
+			width: (100)+%;
+		}
+	}
 	.flickity-prev-next-button{
 		background-color: transparent;
 		&:hover, &:focus{
@@ -2357,15 +2459,24 @@ a[target="_blank"]{
 
 
 
+
+
+
+
+
+
+
 .jcarousel-wrapper{
-	margin: 40px 0;
 	position: relative;
+	padding: 75px 0;
 }
 .jcarousel {
+	background-color: gray;
     position: relative;
     overflow: hidden;
+    //overflow: auto;
     width: 100%;
-    height: 450px;
+   	height: 1310px;
     img{
    		display: block;
     	width: 100%;
@@ -2380,18 +2491,15 @@ a[target="_blank"]{
 		    padding:0;
 		}
 		li{
-			text-align: center;
 			width: 100%;
 			float: left;
 			//overflow: hidden;
-    	margin: 2% 5px;
-    	padding:0 15px;
     	&:first-child{
     		margin-top: 0;
     	}
 		}
 		@media (max-width:991px){
-			height: 200px;
+/* 			height: 200px;
 			ul{
 				width: 10000em;
 			}
@@ -2399,7 +2507,7 @@ a[target="_blank"]{
 				margin: 0 0;
 				padding:0 0;
 				width: 200px;
-			}	
+			}	 */
 		}
 }
 
@@ -2410,26 +2518,34 @@ a[target="_blank"]{
 .jcarousel-control-next {
     position: absolute;
     left: 50%;
-    width: 30px;
-    height: 30px;
-    margin-left: -15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: -25px;
     text-align: center;
-    background: #4E443C;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: 0 0 1px #000;
-    font: 24px/27px Arial;
-    border-radius: 30px;
-   	box-shadow: 0 0 2px #999;
+    background: transparent;
+    border: 1px solid $color-1;
+    color: $color-1;
+    text-decoration: none;    
+    i{
+    	margin-top: 2px;
+    	font-size: 40px;
+    }
+    &:hover{
+    	background-color: black;
+    	border-color: black;
+    	color:white;
+    }
 }
 .jcarousel-control-prev {
-    top: -20px;
+    top: 15px;
 }
 .jcarousel-control-next {
-    bottom: -20px;
+    bottom: 15px;
 }
 .jcarousel-control-prev.inactive,
 .jcarousel-control-next.inactive {
+		display: none;
     opacity: 0.5;
     cursor: default;
 }

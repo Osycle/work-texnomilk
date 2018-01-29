@@ -17852,6 +17852,13 @@ http://flickity.metafizzy.co
     .table-content table tbody tr:nth-child(odd) {
       background-color: rgba(35, 187, 84, 0.1); }
 
+@media (min-width: 992px) {
+  .figure-center {
+    text-align: center; }
+    .figure-center * {
+      text-align: initial;
+      text-align: left; } }
+
 .letter-none, .menu ul {
   letter-spacing: -6px; }
   .letter-none *, .menu ul * {
@@ -18251,6 +18258,9 @@ dib {
     list-style: none;
     list-style-position: outside;
     list-style-image: url("../img/icons/list-icon.png"); }
+
+.text-indent {
+  text-indent: 60px; }
 
 .bg-page {
   position: absolute;
@@ -18932,7 +18942,7 @@ a[target="_blank"] {
   .rev-slider h1 {
     width: 90%; }
   .rev-slider .slide-header {
-    width: 50%; }
+    width: 49%; }
   .rev-slider.img {
     width: 50%; }
     .rev-slider.img img {
@@ -18997,7 +19007,6 @@ a[target="_blank"] {
   .short-news-items * {
     letter-spacing: 0; }
   .short-news-items figure {
-    width: 50%;
     margin-left: 0%;
     margin-right: 0%;
     display: inline-table;
@@ -19018,7 +19027,6 @@ a[target="_blank"] {
       .short-news-items * {
         letter-spacing: 0; }
       .short-news-items figure {
-        width: 100%;
         margin-left: 0%;
         margin-right: 0%;
         display: inline-table;
@@ -19093,7 +19101,6 @@ a[target="_blank"] {
   .short-services-items * {
     letter-spacing: 0; }
   .short-services-items figure {
-    width: 15%;
     margin-left: 0.83333%;
     margin-right: 0.83333%;
     display: inline-table;
@@ -19114,7 +19121,6 @@ a[target="_blank"] {
       .short-services-items * {
         letter-spacing: 0; }
       .short-services-items figure {
-        width: 50%;
         margin-left: 0%;
         margin-right: 0%;
         display: inline-table;
@@ -19233,6 +19239,99 @@ a[target="_blank"] {
     max-width: unset;
     right: 15px;
     position: absolute; }
+
+/*
+	--pages--
+*/
+.about-photo {
+  margin-left: -2.75%;
+  margin-right: -2.75%;
+  letter-spacing: -6px; }
+  .about-photo * {
+    letter-spacing: 0; }
+  .about-photo figure {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    float: left;
+    width: 45%; }
+  @media (max-width: 991px) {
+    .about-photo {
+      margin-left: -5.25%;
+      margin-right: -5.25%;
+      letter-spacing: -6px; }
+      .about-photo * {
+        letter-spacing: 0; }
+      .about-photo figure {
+        margin-left: 5%;
+        margin-right: 5%;
+        float: left;
+        width: 90%; } }
+
+.contacts-faces {
+  margin-left: -2.75%;
+  margin-right: -2.75%;
+  letter-spacing: -6px; }
+  .contacts-faces * {
+    letter-spacing: 0; }
+  .contacts-faces figure {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    display: inline-table;
+    vertical-align: top;
+    width: 45%; }
+    .contacts-faces figure .img-content img {
+      max-height: 100%;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      margin: 0 auto;
+      display: block; }
+  @media (max-width: 991px) {
+    .contacts-faces {
+      margin-left: -5.25%;
+      margin-right: -5.25%;
+      letter-spacing: -6px; }
+      .contacts-faces * {
+        letter-spacing: 0; }
+      .contacts-faces figure {
+        margin-left: 5%;
+        margin-right: 5%;
+        display: inline-table;
+        vertical-align: top;
+        width: 90%; }
+        .contacts-faces figure .img-content img {
+          max-height: 100%;
+          max-width: 100%;
+          width: auto;
+          height: auto;
+          margin: 0 auto;
+          display: block; } }
+
+.info .jcarousel-wrapper {
+  display: none; }
+  .info .jcarousel-wrapper.active {
+    display: block; }
+
+.info .info-items [class*="info-item"] {
+  padding: 40px;
+  padding-top: 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+  .info .info-items [class*="info-item"] .img-content {
+    width: 100%; }
+  .info .info-items [class*="info-item"].active, .info .info-items [class*="info-item"]:hover {
+    background-color: #23bb54;
+    color: white; }
+
+.info .info-items-carousels [class*="info-item-carousel"] {
+  padding: 15px 20px; }
+  .info .info-items-carousels [class*="info-item-carousel"] .img-content {
+    width: 100%; }
+
+@media (max-width: 991px) {
+  .info .jcarousel {
+    height: 700px; } }
 
 /*
 										 ---FOOTER---
@@ -19360,7 +19459,6 @@ a[target="_blank"] {
   .carousel-equipment * {
     letter-spacing: 0; }
   .carousel-equipment figure {
-    width: 25.5%;
     margin-left: -0.25%;
     margin-right: -0.25%;
     display: inline-table;
@@ -19391,7 +19489,6 @@ a[target="_blank"] {
   .carousel-projects * {
     letter-spacing: 0; }
   .carousel-projects figure {
-    width: 25.5%;
     margin-left: -0.25%;
     margin-right: -0.25%;
     display: inline-table;
@@ -19487,6 +19584,10 @@ a[target="_blank"] {
     transition: filter 0.2s ease-in-out;
     transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out; }
 
+@media (max-width: 992px) {
+  .carousel-partners .carousel-cell {
+    width: 100%; } }
+
 .carousel-partners .flickity-prev-next-button {
   background-color: transparent; }
   .carousel-partners .flickity-prev-next-button:hover, .carousel-partners .flickity-prev-next-button:focus {
@@ -19500,15 +19601,46 @@ a[target="_blank"] {
 .carousel-partners .flickity-prev-next-button.next {
   right: -10px; }
 
+.carousel-certification .carousel-cell {
+  width: 20%;
+  margin-left: 0;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-right: 5.4%; }
+  .carousel-certification .carousel-cell img {
+    -webkit-transition: -webkit-filter 0.2s ease-in-out;
+    transition: -webkit-filter 0.2s ease-in-out;
+    -o-transition: filter 0.2s ease-in-out;
+    transition: filter 0.2s ease-in-out;
+    transition: filter 0.2s ease-in-out, -webkit-filter 0.2s ease-in-out; }
+
+@media (max-width: 992px) {
+  .carousel-certification .carousel-cell {
+    width: 100%; } }
+
+.carousel-certification .flickity-prev-next-button {
+  background-color: transparent; }
+  .carousel-certification .flickity-prev-next-button:hover, .carousel-certification .flickity-prev-next-button:focus {
+    background-color: transparent; }
+    .carousel-certification .flickity-prev-next-button:hover .arrow, .carousel-certification .flickity-prev-next-button:focus .arrow {
+      fill: #23bb54; }
+
+.carousel-certification .flickity-prev-next-button.previous {
+  left: -10px; }
+
+.carousel-certification .flickity-prev-next-button.next {
+  right: -10px; }
+
 .jcarousel-wrapper {
-  margin: 40px 0;
-  position: relative; }
+  position: relative;
+  padding: 75px 0; }
 
 .jcarousel {
+  background-color: gray;
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 450px; }
+  height: 1310px; }
   .jcarousel img {
     display: block;
     width: 100%;
@@ -19521,50 +19653,56 @@ a[target="_blank"] {
     margin: 0;
     padding: 0; }
   .jcarousel li {
-    text-align: center;
     width: 100%;
-    float: left;
-    margin: 2% 5px;
-    padding: 0 15px; }
+    float: left; }
     .jcarousel li:first-child {
       margin-top: 0; }
   @media (max-width: 991px) {
     .jcarousel {
-      height: 200px; }
-      .jcarousel ul {
-        width: 10000em; }
-      .jcarousel li {
-        margin: 0 0;
-        padding: 0 0;
-        width: 200px; } }
+      /* 			height: 200px;
+			ul{
+				width: 10000em;
+			}
+			li{
+				margin: 0 0;
+				padding:0 0;
+				width: 200px;
+			}	 */ } }
 
 /** Carousel Controls **/
 .jcarousel-control-prev,
 .jcarousel-control-next {
   position: absolute;
   left: 50%;
-  width: 30px;
-  height: 30px;
-  margin-left: -15px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin-left: -25px;
   text-align: center;
-  background: #4E443C;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 0 1px #000;
-  font: 24px/27px Arial;
-  -webkit-border-radius: 30px;
-  border-radius: 30px;
-  -webkit-box-shadow: 0 0 2px #999;
-  box-shadow: 0 0 2px #999; }
+  background: transparent;
+  border: 1px solid #23bb54;
+  color: #23bb54;
+  text-decoration: none; }
+  .jcarousel-control-prev i,
+  .jcarousel-control-next i {
+    margin-top: 2px;
+    font-size: 40px; }
+  .jcarousel-control-prev:hover,
+  .jcarousel-control-next:hover {
+    background-color: black;
+    border-color: black;
+    color: white; }
 
 .jcarousel-control-prev {
-  top: -20px; }
+  top: 15px; }
 
 .jcarousel-control-next {
-  bottom: -20px; }
+  bottom: 15px; }
 
 .jcarousel-control-prev.inactive,
 .jcarousel-control-next.inactive {
+  display: none;
   opacity: 0.5;
   cursor: default; }
 

@@ -177,21 +177,51 @@ $(function(){
 		cellAlign: ''
 	});
 
-	//VERTICAL CAROUSEL
-  $('.jcarousel')
-    .jcarousel({
-        //vertical: true
-    })
-		.on('jcarousel:targetin', 'li', function( event, carousel ) {
-		    $(this).addClass('active');
-		})
-		.on('jcarousel:targetout', 'li', function( event, carousel ) {
-				$(this).removeClass('active');
-		});
+	var carouselCertification = $('.carousel-certification .carousel-content').flickity({
+		//setGallerySize: false,
+		autoPlay: 3000,
+		arrowShape: arrowStyle,
+		imagesLoaded: true,
+		prevNextButtons: true,
+		draggable: checkSm(),
+		wrapAround: true,
+		//adaptiveHeight: true,
+		//selectedAttraction: 0.2,
+		//friction: 0.2,
+		//rightToLeft: true,
+		pageDots: false,
+		contain: false,
+		percentPosition: true,
+		cellAlign: 'left'
+	});
 
-	// CONTROLS
-  $('.jcarousel-control-prev')
-      .on('jcarouselcontrol:active', function() {
+
+
+	//VERTICAL CAROUSEL
+
+	var jcarouselWrapper = $('.jcarousel-wrapper');
+
+	for( var i =  0; i < jcarouselWrapper.length; i++ ){
+		console.log( jcarouselWrapper.eq(i).find(".jcarousel") )
+		jcarouselWrapper.eq(i).find(".jcarousel")
+			.jcarousel({
+	      vertical: checkSm() ? true : true,
+	      center: false
+	    })
+			.on('jcarousel:targetin', 'li', function( event, carousel ) {
+			    $(this).addClass('active');
+			})
+			.on('jcarousel:targetout', 'li', function( event, carousel ) {
+					$(this).removeClass('active');
+			})
+
+			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '+=1');
+		// CONTROLS
+		var prevNext = jcarouselWrapper.eq(i).find(".jcarousel-prev-next");
+
+		//prev
+		prevNext.find(".jcarousel-control-prev")
+		  .on('jcarouselcontrol:active', function() {
           $(this).removeClass('inactive');
       })
       .on('jcarouselcontrol:inactive', function() {
@@ -201,7 +231,8 @@ $(function(){
           target: '-=1'
       });
 
-  $('.jcarousel-control-next')
+     //next
+    prevNext.find(".jcarousel-control-next")
       .on('jcarouselcontrol:active', function() {
           $(this).removeClass('inactive');
       })
@@ -212,15 +243,8 @@ $(function(){
           target: '+=1'
       });
 
-  $('.jcarousel-pagination')
-      .on('jcarouselpagination:active', 'a', function() {
-          $(this).addClass('active');
-      })
-      .on('jcarouselpagination:inactive', 'a', function() {
-          $(this).removeClass('active');
-      })
-      .jcarouselPagination();
 
+	}//:end for;
 
 
 	if( $('.carousel-article').length >= 0 ){
