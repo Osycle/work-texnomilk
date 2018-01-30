@@ -33,57 +33,36 @@ $(function(){
 	setTimeout(function(){AOS.refresh()}, 1000);
 
 
-	// MMENU
-/*	$("#min-menu").mmenu({
-		"extensions": [
-			"fx-menu-zoom",
-			"fx-panels-zoom",
-			"pagedim-black",
-			"theme-dark"
-		],
-		"offCanvas": {
-			"position": "right"
-		},
-		"navbars": [
+
+	$("#min-menu").mmenu({
+		extensions 	: [ 
+									"position-bottom", 
+									"fullscreen", 
+									"theme-black", 
+									"listview-50", 
+									"fx-panels-slide-up", 
+									"fx-listitems-drop", 
+									"border-offset" 
+									],
+		navbar 			: 
+								{
+									title 		: "Меню"
+								},
+		navbars		: [{
+			height 	: 2,
+			content : [ 
+									'<div class="min-menu-logo">'+
+									'<a  href="" ><img src="img/logo.png"/></a>'+
+									'</div>'+
+									'<div class="close-btn">'+
+									'<a  href="#page" ><i class="fa fa-angle-right"></i></a>'+
+									'</div>'
+								]
+					}, 
 			{
-			"position": "top"
-			}
-		]
-	});
-
-
-
-*/
-	
-			$("#min-menu").mmenu({
-				extensions 	: [ 
-											"position-bottom", 
-											"fullscreen", 
-											"theme-black", 
-											"listview-50", 
-											"fx-panels-slide-up", 
-											"fx-listitems-drop", 
-											"border-offset" 
-											],
-				navbar 			: 
-										{
-											title 		: "Меню"
-										},
-				navbars		: [{
-					height 	: 2,
-					content : [ 
-											'<div class="min-menu-logo">'+
-											'<a  href="" ><img src="img/logo.png"/></a>'+
-											'</div>'+
-											'<div class="close-btn">'+
-											'<a  href="#page" ><i class="fa fa-angle-right"></i></a>'+
-											'</div>'
-										]
-							}, 
-					{
-						content : ["prev","title"] 
-					}]
-				}, { });
+				content : ["prev","title"] 
+			}]
+		}, { });
 
 
 
@@ -97,24 +76,8 @@ $(function(){
 		  x3: 30
 		}
 
-  // POPULAR
-	var carouselPopular = $('.carousel-popular .carousel-content').flickity({
-		//setGallerySize: false,
-		autoPlay: 3000,
-		arrowShape: arrowStyle,
-		imagesLoaded: true,
-		prevNextButtons: checkSm(),
-		draggable: !checkSm(),
-		wrapAround: true,
-		//adaptiveHeight: true,
-		//selectedAttraction: 0.2,
-		//friction: 0.2,
-		//rightToLeft: true,
-		pageDots: false,
-		contain: true,
-		percentPosition: true,
-		cellAlign: checkSm() ? "left" : "center"
-	});
+
+
 
 
 	var carouselEquipment = $('.carousel-equipment .carousel-content').flickity({
@@ -135,8 +98,8 @@ $(function(){
 		cellAlign: ''
 	});
 
+
 	var carouselProjects = $('.carousel-projects .carousel-content').flickity({
-		//setGallerySize: false,
 		autoPlay: 3500,
 		arrowShape: arrowStyle,
 		imagesLoaded: true,
@@ -150,10 +113,9 @@ $(function(){
 	});
 
 	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
-		//setGallerySize: false,
+		imagesLoaded: true,
 		autoPlay: 3300,
 		arrowShape: arrowStyle,
-		imagesLoaded: true,
 		groupCells: checkSm() ? 1 : 2,
 		prevNextButtons: true,
 		draggable: checkSm(),
@@ -165,9 +127,9 @@ $(function(){
 	});
 
 	var carouselPartners = $('.carousel-partners .carousel-content').flickity({
+		imagesLoaded: true,
 		autoPlay: 2800,
 		arrowShape: arrowStyle,
-		imagesLoaded: true,
 		prevNextButtons: true,
 		draggable: checkSm(),
 		wrapAround: true,
@@ -178,34 +140,42 @@ $(function(){
 	});
 
 	var carouselCertification = $('.carousel-certification .carousel-content').flickity({
-		//setGallerySize: false,
+		imagesLoaded: true,
 		autoPlay: 3000,
 		arrowShape: arrowStyle,
-		imagesLoaded: true,
 		prevNextButtons: true,
 		draggable: checkSm(),
 		wrapAround: true,
-		//adaptiveHeight: true,
-		//selectedAttraction: 0.2,
-		//friction: 0.2,
-		//rightToLeft: true,
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
 		cellAlign: 'left'
 	});
 
+	if( checkSm() )
+		$('.carousel-info-item .carousel-content').flickity({
+			imagesLoaded: true,
+			autoPlay: 3000,
+			arrowShape: arrowStyle,
+			prevNextButtons: true,
+			draggable: false,
+			wrapAround: true,
+			pageDots: false,
+			contain: false,
+			percentPosition: true,
+			cellAlign: 'left'
+		});
 
 
 	//VERTICAL CAROUSEL
-
 	var jcarouselWrapper = $('.jcarousel-wrapper');
 
 	for( var i =  0; i < jcarouselWrapper.length; i++ ){
-		console.log( jcarouselWrapper.eq(i).find(".jcarousel") )
+		
 		jcarouselWrapper.eq(i).find(".jcarousel")
 			.jcarousel({
 	      vertical: checkSm() ? true : true,
+	      wrap: 'both',
 	       animation: {
 		        duration: 600,
 		        easing:   'linear',
@@ -221,7 +191,7 @@ $(function(){
 					$(this).removeClass('active');
 			})
 
-			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '-1');
+			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '2');
 			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('fullyvisible');
 
 
@@ -376,8 +346,7 @@ $(function(){
 		if ( $(".search-not-found").length )
 			$(".search-not-found").addClass("show");
 
-	//RESIZE
-	$( window ).on("resize", function(e){});
+
 
 	//SCROLL
 	var header_status = false;
@@ -509,15 +478,20 @@ function checkSm(){
 	return ($( document ).width() < 992);
 }
 
-function getRandomInt(min, max) {
+function getRandomInt( min, max ) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function getRandomIntFloat(min, max) {
+function getRandomIntFloat( min, max ) {
   return Math.random() * (max - min) + min;
 }
-
-function scrolledDiv(el) {
+function resizer( f ) {
+	if( typeof f === "function" ) f();
+	$( window ).on("resize", function(e){
+		if( typeof f === "function" ) f();
+	});
+}
+function scrolledDiv( el ) {
 	try{
 	  var docViewTop = $(window).scrollTop(),
 		docViewBottom = docViewTop + $(window).height(),

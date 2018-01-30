@@ -32,7 +32,14 @@ $color-gray_3: #212121;
   left: 50%;
 	top: 50%;
 }
+@mixin placeholder( $color ){
 
+	&::-moz-placeholder { color: $color;opacity: 1; }
+	&:-ms-input-placeholder { color:$color; }
+	&::-webkit-input-placeholder { color: $color; }
+	&::-ms-expand { border: 0;background-color: transparent; }
+
+}
 @mixin align-cells( $width: 75, $item: 3, $style: block ) {
 
 	
@@ -586,7 +593,7 @@ dib{
 	.pagination{
 		li{
 			display: inline-block;
-			border-radius: 5px;
+			border-radius: 30px;
 			margin: 0 5px;
 			font-weight: 500;
 			&:hover{
@@ -787,6 +794,11 @@ $header-min-menu: 100px;
 	position: relative;
 	@media (max-width: 991px){
 		position: fixed;
+	}
+}
+header{
+	h1{
+		padding-bottom: 0;
 	}
 }
 .header-hidden{
@@ -1429,15 +1441,31 @@ main{
 
 
 
-//TEST
 .main-content{
 	position: relative;
+
+	.text-content{		
+		p{
+			@extend .color-gray;
+		}
+		b, strong{
+			color: black;
+		}
+	}
+
 }
 a[target="_blank"]{
 	color: $color-1;
 	text-decoration: underline;
 }
+.link-hover{
+	transition: all 0.3s ease-in-out;
+	&:hover{
+		text-decoration: underline;
+		color: $color-1;
+	}
 
+}
 .hover-color-1{
 	&:hover{
 		color: $color-4;
@@ -1498,7 +1526,10 @@ a[target="_blank"]{
  	&> .container{
  		position: relative;
  	}
-
+ 	@media ( max-width:991px ){
+ 		overflow: hidden;
+    position: relative;
+ 	}
 }
 
 
@@ -2013,7 +2044,7 @@ a[target="_blank"]{
 
 
 
-
+//info
 .info{
 	.jcarousel-wrapper{
 		display: none;
@@ -2024,11 +2055,12 @@ a[target="_blank"]{
 	.info-items{
 		li{
 			list-style: none;
+			margin: 30px 0;
 		}
 		[class*="info-item"]{
 			padding: 40px;
 			padding-top: 10px;
-			transition: all 0.3s ease-in-out;
+			//transition: all 0.3s ease-in-out;
 			.img-content{
 				width: 100%;
 			}
@@ -2058,10 +2090,217 @@ a[target="_blank"]{
 	}
 	@media (max-width:991px){
 		.jcarousel{
-			height: 700px;
+			max-height: 650px;
+			
 		}
 	}
 }
+.dispatch{
+	input{
+		@include placeholder(white)
+		border-radius: 20px;
+		background-color: transparent;
+		border: 1px solid white;
+		height:40px;
+		color: white;
+		&:focus{
+			border-color: white;
+		}
+	}
+	.btn-def{
+		background-color: #333;
+		height: 40px;
+		width:100% ;
+	}
+}
+
+
+
+
+
+
+
+//info-articles
+
+.info-articles-items{
+	@include align-cells(80, 2, table);
+	@media (max-width:991px){
+		@include align-cells(90, 1, table);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+.cooperation{
+
+	.jcarousel-wrapper{
+		padding: 30px 15px;
+	}
+	.jcarousel{
+		height: auto;
+		max-height: 900px;
+		li{
+			margin: 15px 0;
+			padding: 0 20px;
+		}
+		figure{
+			border-radius: 30px;
+	    top: -11px;
+	    position: relative;
+	    transition: all 0.3s ease-in-out;
+	    &:hover{
+	    	box-shadow: 0 0 20px -6px black;
+	    }
+		}
+	}
+
+	.jcarousel-control-prev, .jcarousel-control-next{
+    
+    color: white;
+    background-color: black;
+    border-color: black;
+    transition: all 0.3s ease;
+    i{  
+    	margin-top: 5px;	
+	    font-size: 36px;
+    }
+    .fa-angle-down{
+    	margin-top: 5px;
+    }
+    .fa-angle-up{
+    	margin-top: 2.5px;
+    }
+
+
+	}
+
+
+
+	@media (min-width: 992px){
+		.cooperation-items{
+			border-right: 2px solid $color-1;
+		}
+		.jcarousel-control-prev, .jcarousel-control-next{
+			border: 4px solid white;
+			margin-left: -20px;
+			width: 40px;
+			height: 40px;
+			i{
+	    	font-size: 25px;
+	    	margin-top: 3px;
+	    }
+	    &:hover{
+	    	background-color: $color-1;
+	    	border-color: white;
+	    }
+		}
+		.jcarousel-control-prev{
+			top: 0;
+		}
+		.jcarousel-control-next{
+			bottom: 0;
+		}
+	}
+
+
+	@media ( max-width:991px ){
+		.jcarousel{
+			max-height: 100vw ;
+		}
+		.btn-def{
+			margin: auto;
+		}
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.news-item{
+	.collapse-toggle{
+		a{
+			span{
+				//display: none;
+			}
+			.text-hidden{
+				display: none;
+			}
+			&.collapsed{
+				.text-hidden{
+					display: block;
+					& ~ .text-show{
+						display: none;
+					}
+				}
+			}
+		}
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//media-center gallery
+.gallery-photo-items{
+		@include align-cells(90, 2, table);
+	@media (max-width:991px){
+		@include align-cells(90, 1, table);
+}
+}
+.gallery-photo-item{
+	.img-content{
+		& > img{
+			width: 100% !important;
+		}
+	}
+	.cell-hover{
+		opacity: 0;
+		background-color: rgba($color-1, 0.5);
+	}
+	&:hover{
+		.cell-hover{
+			opacity: 1;
+		}
+	}
+	position: relative;
+}
+
+.gallery-video-items{
+	iframe{
+
+		margin-bottom: 15px;
+		width: 100%;
+		height: 300px;
+	}
+}
+
+
 
 
 
@@ -2201,9 +2440,6 @@ a[target="_blank"]{
 
 
 // FLICKITY 
-
-
-
 
 
 
@@ -2497,46 +2733,37 @@ a[target="_blank"]{
 .jcarousel-wrapper{
 	position: relative;
 	padding: 75px 0;
+	@media (max-width:991px){
+		padding: 15px 0;
+	}
 }
 .jcarousel {
-	background-color: gray;
-    position: relative;
-    overflow: hidden;
-    //overflow: auto;
-    width: 100%;
-   	height: 1310px;
-    img{
-   		display: block;
-    	width: 100%;
-    	height: auto !important;
-    }
-		ul{
-		    width: 100%;
-		    height: 100%;
-		    position: relative;
-		    list-style: none;
-		    margin: 0;
-		    padding:0;
-		}
-		li{
-			width: 100%;
-			float: left;
-			//overflow: hidden;
-    	&:first-child{
-    		margin-top: 0;
-    	}
-		}
-		@media (max-width:991px){
-/* 			height: 200px;
-			ul{
-				width: 10000em;
-			}
-			li{
-				margin: 0 0;
-				padding:0 0;
-				width: 200px;
-			}	 */
-		}
+  position: relative;
+  overflow: hidden;
+  //overflow: auto;
+  width: 100%;
+ 	height: 1310px;
+  img{
+ 		display: block;
+  	width: 100%;
+  	height: auto !important;
+  }
+	ul{
+	    width: 100%;
+	    height: 100%;
+	    position: relative;
+	    list-style: none;
+	    margin: 0;
+	    padding:0;
+	}
+	li{
+		width: 100%;
+		float: left;
+		//overflow: hidden;
+  	&:first-child{
+  		margin-top: 0;
+  	}
+	}
 }
 
 
@@ -2544,40 +2771,62 @@ a[target="_blank"]{
 
 .jcarousel-control-prev,
 .jcarousel-control-next {
-    position: absolute;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-left: -25px;
-    text-align: center;
-    background: transparent;
-    border: 1px solid $color-1;
-    color: $color-1;
-    text-decoration: none;    
-    i{
-    	margin-top: 2px;
-    	font-size: 40px;
-    }
-    &:hover{
-    	background-color: black;
-    	border-color: black;
-    	color:white;
-    }
+  position: absolute;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: -25px;
+  text-align: center;
+  background: transparent;
+  border: 1px solid $color-1;
+  color: $color-1;
+  text-decoration: none;    
+  i{
+  	font-size: 40px;
+  }
+  &:hover{
+  	background-color: black;
+  	border-color: black;
+  	color:white;
+  }
 }
 .jcarousel-control-prev {
-    top: 15px;
+  top: 15px;
+  i{
+  	margin-top: 2px;
+  }
 }
 .jcarousel-control-next {
-    bottom: 15px;
+  bottom: 15px;
+  i{
+  	margin-top: 4px;
+  }
 }
 .jcarousel-control-prev.inactive,
-.jcarousel-control-next.inactive {
-		display: none;
-    opacity: 0.5;
-    cursor: default;
+.jcarousel-control-next.inactive { 
+	display: none;
+  opacity: 0.5;
+  cursor: default;
 }
+@media ( max-width:991px ) {
 
+	.jcarousel-control-prev,
+	.jcarousel-control-next {
+		left:initial;
+		left:unset;
+		top: 50%;
+		margin-top: -25px;
+		margin-left: 0;
+	}
+
+	.jcarousel-control-prev {
+    left: 0;
+	}
+	.jcarousel-control-next {
+	  right: 0;
+	}
+}
 /** Carousel Pagination **/
 
 .jcarousel-pagination {
@@ -2587,29 +2836,29 @@ a[target="_blank"]{
 }
 
 .jcarousel-pagination a {
-    text-decoration: none;
-    display: inline-block;
-    
-    font-size: 11px;
-    line-height: 14px;
-    min-width: 14px;
-    
-    background: #fff;
-    color: #4E443C;
-    border-radius: 14px;
-    padding: 3px;
-    text-align: center;
-    
-    margin-right: 2px;
-    
-    opacity: .75;
+  text-decoration: none;
+  display: inline-block;
+  
+  font-size: 11px;
+  line-height: 14px;
+  min-width: 14px;
+  
+  background: #fff;
+  color: #4E443C;
+  border-radius: 14px;
+  padding: 3px;
+  text-align: center;
+  
+  margin-right: 2px;
+  
+  opacity: .75;
 }
 
 .jcarousel-pagination a.active {
-    background: #4E443C;
-    color: #fff;
-    opacity: 1;
-    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
+  background: #4E443C;
+  color: #fff;
+  opacity: 1;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);
 }
 
 
