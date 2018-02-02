@@ -95,7 +95,7 @@ $(function(){
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
-		cellAlign: ''
+		cellAlign: checkSm() ? "center" : '' 
 	});
 
 
@@ -109,12 +109,13 @@ $(function(){
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
-		cellAlign: ''
+		cellAlign: checkSm() ? "center" : '' 
 	});
 
 	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
 		imagesLoaded: true,
 		autoPlay: 3300,
+		adaptiveHeight: true,
 		arrowShape: arrowStyle,
 		groupCells: checkSm() ? 1 : 2,
 		prevNextButtons: true,
@@ -149,7 +150,7 @@ $(function(){
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
-		cellAlign: 'left'
+		cellAlign: 'center'
 	});
 
 	if( checkSm() )
@@ -168,72 +169,71 @@ $(function(){
 
 
 	//VERTICAL CAROUSEL
-	var jcarouselWrapper = $('.jcarousel-wrapper');
+	var jcarouselWrapper = $('.jcarousel-wrapper') || null;
+	if (jcarouselWrapper)
+		for( var i =  0; i < jcarouselWrapper.length; i++ ){
+			
+			jcarouselWrapper.eq(i).find(".jcarousel")
+				.jcarousel({
+		      vertical: checkSm() ? true : true,
+		      wrap: 'both',
+		       animation: {
+			        duration: 600,
+			        easing:   'linear',
+			        complete: function() {
+			        }
+			    },
+		      center: false
+		    })
+				.on('jcarousel:targetin', 'li', function( event, carousel ) {
+				    $(this).addClass('active');
+				})
+				.on('jcarousel:targetout', 'li', function( event, carousel ) {
+						$(this).removeClass('active');
+				})
 
-	for( var i =  0; i < jcarouselWrapper.length; i++ ){
-		
-		jcarouselWrapper.eq(i).find(".jcarousel")
-			.jcarousel({
-	      vertical: checkSm() ? true : true,
-	      wrap: 'both',
-	       animation: {
-		        duration: 600,
-		        easing:   'linear',
-		        complete: function() {
-		        }
-		    },
-	      center: false
-	    })
-			.on('jcarousel:targetin', 'li', function( event, carousel ) {
-			    $(this).addClass('active');
-			})
-			.on('jcarousel:targetout', 'li', function( event, carousel ) {
-					$(this).removeClass('active');
-			})
-
-			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '2');
-			jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('fullyvisible');
-
-
-		// CONTROLS
-		var prevNext = jcarouselWrapper.eq(i).find(".jcarousel-prev-next");
-
-		//prev
-		prevNext.find(".jcarousel-control-prev")
-		  .on('jcarouselcontrol:active', function() {
-          $(this).removeClass('inactive');
-      })
-      .on('jcarouselcontrol:inactive', function() {
-          $(this).addClass('inactive');
-      })
-      .jcarouselControl({
-          target: '-=1'
-      });
-
-     //next
-    prevNext.find(".jcarousel-control-next")
-      .on('jcarouselcontrol:active', function() {
-          $(this).removeClass('inactive');
-      })
-      .on('jcarouselcontrol:inactive', function() {
-          $(this).addClass('inactive');
-      })
-      .jcarouselControl({
-          target: '+=1'
-      });
+				jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('scroll', '2');
+				jcarouselWrapper.eq(i).find(".jcarousel").jcarousel('fullyvisible');
 
 
-	}//:end for;
+			// CONTROLS
+			var prevNext = jcarouselWrapper.eq(i).find(".jcarousel-prev-next");
+
+			//prev
+			prevNext.find(".jcarousel-control-prev")
+			  .on('jcarouselcontrol:active', function() {
+	          $(this).removeClass('inactive');
+	      })
+	      .on('jcarouselcontrol:inactive', function() {
+	          $(this).addClass('inactive');
+	      })
+	      .jcarouselControl({
+	          target: '-=1'
+	      });
+
+	     //next
+	    prevNext.find(".jcarousel-control-next")
+	      .on('jcarouselcontrol:active', function() {
+	          $(this).removeClass('inactive');
+	      })
+	      .on('jcarouselcontrol:inactive', function() {
+	          $(this).addClass('inactive');
+	      })
+	      .jcarouselControl({
+	          target: '+=1'
+	      });
+		}//:end for;
 
 
 	//BOOTSTRAP TAB
-	var prevTab = $('a[data-toggle="tab"]').closest('[role="active"].active');
-	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-	  $(e.target).closest('[role="active"]').addClass("active");
-	  $(prevTab).removeClass("active");
-	 	console.log( e.target, prevTab )
-	  prevTab = $(e.target).closest('[role="active"]');
-	})
+	var prevTab = $('a[data-toggle="tab"]').closest('[role="active"].active') || null;
+	if ( prevTab )
+		$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		  $(e.target).closest('[role="active"]').addClass("active");
+		  $(prevTab).removeClass("active");
+		 	//console.log( e.target, prevTab )
+		  prevTab = $(e.target).closest('[role="active"]');
+		})
 
 
 
