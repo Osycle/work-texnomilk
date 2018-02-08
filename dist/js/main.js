@@ -95,7 +95,7 @@ $(function(){
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
-		cellAlign: ''
+		cellAlign: checkSm() ? "center" : '' 
 	});
 
 
@@ -109,12 +109,13 @@ $(function(){
 		pageDots: false,
 		contain: false,
 		percentPosition: true,
-		cellAlign: ''
+		cellAlign: checkSm() ? "center" : '' 
 	});
 
 	var carouselReviews = $('.carousel-reviews .carousel-content').flickity({
 		imagesLoaded: true,
 		autoPlay: 3300,
+		adaptiveHeight: true,
 		arrowShape: arrowStyle,
 		groupCells: checkSm() ? 1 : 2,
 		prevNextButtons: true,
@@ -518,7 +519,7 @@ function scrolledDiv( el ) {
 		   window.revSlider = $('.rev-slider').revolution({
 					delay:6000,
 					startwidth: $( window ).width() < 992 ? $( window ).width() : 1170,
-					startheight: $( window ).width() < 992 ? 600 : 550,
+					startheight: $( window ).width() < 992 ? 450 : 400,
 					autoHeight:"off",
 					fullScreenAlignForce:"off",
 
