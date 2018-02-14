@@ -748,12 +748,19 @@ dib{
 	background-image: url("../img/bg/cow-header.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
-	
-	@media (min-width:992px) {
-		background-position: -130px -180px;
+	background-position-x: -200px;
+	@media (max-width:991px) {
+		background-position-y:-310px;
 	}
+	@media (min-width:1200px) {
+		background-position-y: -280px;
+	}
+	@media (min-width:1440px) {
+		background-position-y: -220px;
+	}
+
 	@media (max-width:992px) {
-		background-position: 0 -360px;
+		background-position-y:-360px;
 	}
 
 
@@ -851,7 +858,7 @@ dib{
 										 --- HEADER ---
 */
 
-$header-top-height: 170px; 
+$header-top-height: 110px; 
 $header-bottom-height: 115px; 
 $header-min-menu: 100px;
 #header{
@@ -892,10 +899,10 @@ header{
 }
 
 .logo{
-	height: 140px;
+	height: 110px;
 	img{
-		width: 350px;
-		width: 100%;
+		width: 250px;
+		//width: 100%;
 		max-width: unset;
 	}
 	font{
@@ -1604,14 +1611,15 @@ a[target="_blank"]{
 			font-size: em( (14/1.1) , 16);
 			line-height: 200%;
 		}
-		img{
-			max-width: 100% !important;
-			//width: 100% !important;
-		}
 		.btn-def{
 			margin-top: 30px;
 			width: 220px;
 		}
+		&:not(.img){
+			z-index: 1;
+		}
+		
+		
 
 	}
 
@@ -1622,12 +1630,16 @@ a[target="_blank"]{
 		.slide-header{
 			width: 49%;
 			&.img{
-				text-align: right;
-				width: 38% !important;
+				text-align: center;
+				//width: 49% !important;
+				//max-width: 450px !important;
+				max-height: 450px !important;
 				img{
-					height: auto;
-					max-width: 100%;
-					width: 500px !important;
+					height: 280px !important;
+
+					//max-width: 100%;
+					//max-height: 95%;
+					//width: 500px !important;
 				}
 			}
 		}
@@ -2074,7 +2086,7 @@ a[target="_blank"]{
 
 //contacts
 .contacts-faces{
-	@include align-cells(90, 2, table);
+	@include align-cells(95, 2, table);
 	@media (max-width:991px){
 		@include align-cells(90, 1, table);
 	}

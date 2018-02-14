@@ -18275,13 +18275,20 @@ dib {
   background-size: cover;
   background-image: url("../img/bg/cow-header.jpg");
   background-repeat: no-repeat;
-  background-position: center center; }
-  @media (min-width: 992px) {
+  background-position: center center;
+  background-position-x: -200px; }
+  @media (max-width: 991px) {
     .bg-cow-header {
-      background-position: -130px -180px; } }
+      background-position-y: -310px; } }
+  @media (min-width: 1200px) {
+    .bg-cow-header {
+      background-position-y: -280px; } }
+  @media (min-width: 1440px) {
+    .bg-cow-header {
+      background-position-y: -220px; } }
   @media (max-width: 992px) {
     .bg-cow-header {
-      background-position: 0 -360px; } }
+      background-position-y: -360px; } }
 
 .bg-dropbefore, .short-partners, .short-feedback {
   position: relative; }
@@ -18369,10 +18376,9 @@ header h1 {
   color: black; }
 
 .logo {
-  height: 140px; }
+  height: 110px; }
   .logo img {
-    width: 350px;
-    width: 100%;
+    width: 250px;
     max-width: unset; }
   .logo font {
     font-size: 1.5em; }
@@ -18932,11 +18938,11 @@ a[target="_blank"] {
     display: inline-block;
     font-size: 0.79545em;
     line-height: 200%; }
-  .rev-slider .slide-header img {
-    max-width: 100% !important; }
   .rev-slider .slide-header .btn-def {
     margin-top: 30px;
     width: 220px; }
+  .rev-slider .slide-header:not(.img) {
+    z-index: 1; }
 
 @media (min-width: 992px) {
   .rev-slider h1 {
@@ -18944,12 +18950,10 @@ a[target="_blank"] {
   .rev-slider .slide-header {
     width: 49%; }
     .rev-slider .slide-header.img {
-      text-align: right;
-      width: 38% !important; }
+      text-align: center;
+      max-height: 450px !important; }
       .rev-slider .slide-header.img img {
-        height: auto;
-        max-width: 100%;
-        width: 500px !important; } }
+        height: 280px !important; } }
 
 @media (max-width: 991px) {
   .rev-slider {
@@ -19291,17 +19295,17 @@ a[target="_blank"] {
         width: 90%; } }
 
 .contacts-faces {
-  margin-left: -2.5%;
-  margin-right: -2.5%;
+  margin-left: -1.25%;
+  margin-right: -1.25%;
   letter-spacing: -6px; }
   .contacts-faces * {
     letter-spacing: 0; }
   .contacts-faces figure {
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
     display: inline-table;
     vertical-align: top;
-    width: 45%; }
+    width: 47.5%; }
     .contacts-faces figure .img-content img {
       max-height: 100%;
       max-width: 100%;
